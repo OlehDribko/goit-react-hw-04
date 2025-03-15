@@ -1,5 +1,7 @@
 import ImageCard from "../ImageCard/ImageCard";
 
+
+
 const ImageGallery = ({ imag }) => {
   if (!imag || imag.length === 0) {
     return alert("Дані відсутні");
