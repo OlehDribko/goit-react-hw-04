@@ -1,21 +1,17 @@
 import ImageCard from "../ImageCard/ImageCard";
+import style from "./ImagGallery.module.css";
 
 
-
-const ImageGallery = ({ imag }) => {
-  if (!imag || imag.length === 0) {
-    return alert("Дані відсутні");
-  }
+const ImageGallery = ({ images, onImageClick }) => {
   return (
-    <ul>
-      {imag.map((img) => {
-        return (
-          <li key={img.id}>
-            <ImageCard imag={img} />
-          </li>
-        );
-      })}
+    <ul className="cardOfImg">
+      {images.map((img) => (
+        <li className={style.cardOfImg} key={img.id}>
+          <ImageCard image={img} onImageClick={onImageClick} />
+        </li>
+      ))}
     </ul>
   );
 };
+
 export default ImageGallery;
